@@ -7,7 +7,9 @@
   "scripts": {
     "start": "node run.js",
     "lint": "eslint .",
-    "build": "npm run docs:build"
+    "build": "npm run docs:build",
+    "docs:build": "echo 'Generating documentation...'",
+    "deploy": "vercel --prod --token=$VERCEL_TOKEN --yes"
   },
   "dependencies": {
     "cheerio": "^1.0.0-rc.3",
