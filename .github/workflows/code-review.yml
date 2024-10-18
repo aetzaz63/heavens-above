@@ -1,0 +1,19 @@
+name: Code Review
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  code-review:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install dependencies
+        run: npm install
+      - name: Run ESLint
+        run: npm run lint
+      - name: Check for vulnerabilities
+        run: npm audit
